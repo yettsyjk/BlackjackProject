@@ -1,4 +1,4 @@
-package com.skilldistillery.blackjack;
+package com.skilldistillery.blackjack.cards;
 
 public class Card {
   private Rank rank;

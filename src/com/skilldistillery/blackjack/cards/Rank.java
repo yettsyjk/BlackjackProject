@@ -1,4 +1,4 @@
-package com.skilldistillery.blackjack;
+package com.skilldistillery.blackjack.cards;
 
 public enum Rank {
 //enum syntax is TWO(value)

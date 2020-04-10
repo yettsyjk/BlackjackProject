@@ -1,5 +1,7 @@
 package com.skilldistillery.blackjack.players;
 
-public class Player {
-
+public abstract class Player {
+	private String name;
+	
+	//by creating an abstract class of Player I could extend attributes to Players and Dealers
 }

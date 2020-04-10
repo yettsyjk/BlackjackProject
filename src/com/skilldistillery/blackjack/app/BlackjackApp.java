@@ -2,40 +2,135 @@ package com.skilldistillery.blackjack.app;
 
 import java.util.Scanner;
 
+import com.skilldistillery.blackjack.cards.Deck;
 import com.skilldistillery.blackjack.hand.BlackjackHand;
+import com.skilldistillery.blackjack.players.BlackjackDealer;
+import com.skilldistillery.blackjack.players.BlackjackPlayer;
 
 public class BlackjackApp {
-	
+
 	private BlackjackHand hand;
+	private Deck deck = new Deck();
+	private BlackjackPlayer player = new BlackjackPlayer();
+	private BlackjackDealer dealer = new BlackjackDealer();
 	Scanner sc = new Scanner(System.in);
-	
-	
-	
 
 	public static void main(String[] args) {
 		BlackjackApp app = new BlackjackApp();
-		
+		app.launchBlackjack();
 
 	}
-	
+
 	private void launchBlackjack() {
 		boolean keepGoing = true;
+		do {
+			System.out.println("  Welcome to Aria Resort & Casino \nVIP Table  ");
+			System.out.println("-----------------------------------------------");
+			dealer.dealOneCardToDealer();
+			System.out.println("   Dealer Dealing to House                     ");
+
+			System.out.println("   Dealer Dealing to Player                    ");
+			dealer.dealOneCardToPlayer(player);
+			System.out.println("-----------------------------------------------");
+
+			showPlayerHand();
+			showDealerHand();
+			
+			//logic for who is winning
+			if(player.getHand().getHandValue() == 21 ) {
+				System.out.println("Player Wins... BLACKJACK!!!");
+			}
+			if(dealer.typeBlackjack() ) {
+				System.out.println("House Wins... BLACKJACK!!!");
+			}
+			gameLogic();
+			resetDeck();
+			System.out.println();
+			
+			
+			System.out.println("If you have an addiction and want to keep playing Press Y\n N to Quit");
+			String choiceToKeepPlaying = sc.next();
+			if (choiceToKeepPlaying.equalsIgnoreCase("N")) {
+				System.out.println("VIP Table Thanks You for Spending Your Money With Aria Resort & Casino");
+				keepGoing = false;
+			}
+		} while (keepGoing);
+
 	}
-	
-	public void playerHand() {
+
+	public void showPlayerHand() {
 		int userChoice = 0;
-	}
-	
-	public void dealerHand() {
-		//while dealer hand value is less than 17 based off user story allow dealer to hit
+
+		do {
+			System.out.println("Player Hand Value: " + player.getHandTotal());
+			System.out.println("1) Hit (Press 1) \n 2) Stand (Press 2)");
+			userChoice = sc.nextInt();
+			switch (userChoice) {
+			case 1:
+				dealer.hit(player);
+				break;
+			case 2:
+				break;
+			default:
+				System.out.println("1) Hit (Press 1) \n 2) Stand (Press 2)");
+				break;
+			}
+
+		} while (player.getHandTotal() < 21 && userChoice != 2);
+		System.out.println("Player Hand Value: " + player.getHandTotal());
+		System.out.println();
 		
-		//if dealer hand value is larger than 17 based off user story the dealer has gone over
+		
+		if(player.typeBust()) {
+			System.out.println("Jackpot payout ... BUST!");
+		}
 	}
 	
+	
+	public void gameLogic() {
+		if(player.typeBust() ) {
+			System.out.println("House Wins");
+		}
+		if(player.typeBlackjack() ) {
+			System.out.println("Player Wins.. BLACKJACK!!");
+		}
+		if(dealer.typeBust()) {
+			System.out.println("Player Wins.. BLACKJACK!!");
+		}
+		if(dealer.getHand().getHandValue() > player.getHand().getHandValue() && dealer.getHand().getHandValue() <= 21) {
+			System.out.println("House Wins");
+		}
+		if(player.getHand().getHandValue() > dealer.getHand().getHandValue() && !player.typeBust()) {
+			System.out.println("Player Wins");
+		}
+		if(dealer.getHand().getHandValue() == player.getHand().getHandValue() && !dealer.typeBust() && !player.typeBust()) {
+			System.out.println("No Winner");
+		}
+		
+	}
+
+	public void showDealerHand() {
+		// while dealer hand value is less than 17 based off user story allow dealer to
+		while(dealer.getHand().getHandValue() < 17 ) {
+			// hit
+			dealer.hit();
+		}
+		
+		System.out.println("House Hand Value: " + dealer.getHand().getHandValue() );
+		System.out.println(" ");
+		// if dealer hand value is larger than 17 based off user story the dealer has
+		if(dealer.getHand().typeBust() ) {
+			System.out.println("House ... BUST!");
+		}
+		// game over
+	}
+
 	public void resetDeck() {
-		//allow dealer to clear deck
-		
-		//allow player to clear deck
+		// allow dealer to clear deck
+		dealer.getHand().clear();
+
+		// allow player to clear deck
+		player.getHand().clear();
 	}
 
 }

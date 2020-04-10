@@ -11,11 +11,23 @@ public class Deck {
     cards = createDeck();
   }
   
+  
+  public List<Card> dealingCards(int numberOfCards, List<Card> hand) {
+	  for(int card = 0; card < numberOfCards; card++) {
+		  if(cards.size() != 0 ) {
+			  hand.add(dealCard());
+		  }
+	  }
+	  return hand;
+  }
+  
+  
+  
   private List<Card> createDeck(){
     List<Card> deck = new ArrayList<>(52);
-    for(Suit s : Suit.values()) {
-      for(Rank r : Rank.values()) {
-        deck.add(new Card(r, s));
+    for(Suit suits : Suit.values()) {
+      for(Rank ranks : Rank.values()) {
+        deck.add(new Card(ranks, suits));
       }
     }
     return deck;
@@ -30,6 +42,10 @@ public class Deck {
   }
   
   public Card dealCard() {
+	  if(cards.size() == 0) {
+		  createDeck();
+		  shuffle();
+	  }
     return cards.remove(0);
   }
   

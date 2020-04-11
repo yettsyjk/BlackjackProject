@@ -8,7 +8,7 @@ import com.skilldistillery.blackjack.cards.Card;
 public abstract class Hand {
 	
 	private List<Card> cards;
-	
+	//private data encapsulated requires get() and set()
 	
 	//constructor
 	public Hand() {
@@ -42,7 +42,7 @@ public abstract class Hand {
 
 	@Override
 	public String toString() {
-		return "Hand [cards = " + cards + " ] ";
+		return "Hand [ cards = " + cards + " ] ";
 	}
 	
 	

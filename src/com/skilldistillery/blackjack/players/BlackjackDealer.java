@@ -1,16 +1,20 @@
 package com.skilldistillery.blackjack.players;
 
+import java.util.List;
+
+import com.skilldistillery.blackjack.cards.Card;
 import com.skilldistillery.blackjack.cards.Deck;
 import com.skilldistillery.blackjack.hand.BlackjackHand;
 
 public class BlackjackDealer extends BlackjackPlayer{
 	private Deck deck = new Deck();
-	
+	//hand has access through deck of cards
 	private BlackjackHand hand = new BlackjackHand();
 	
 	
 	public BlackjackDealer() {
 		super();
+		//inheriting private List<Card> cards; and access to shuffle
 		deck.shuffle();
 	}
 	
@@ -23,7 +27,7 @@ public class BlackjackDealer extends BlackjackPlayer{
 	}
 	
 	public boolean casinoHand() {
-		if(hand.getHandValue() >= 17 && hand.getHandValue() <=21  ) {
+		if(hand.getHandValue() >= 17 && hand.getHandValue() <= 21  ) {
 			return true;
 		}
 		return false;
@@ -35,6 +39,7 @@ public class BlackjackDealer extends BlackjackPlayer{
 	}
 	
 	public BlackjackHand getHand() {
+		//pass by value Object clone
 		return hand;
 	}
 	

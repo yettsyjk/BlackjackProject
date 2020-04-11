@@ -2,7 +2,7 @@ package com.skilldistillery.blackjack.hand;
 
 import com.skilldistillery.blackjack.cards.Card;
 
-public class BlackjackHand extends Hand{
+public class BlackjackHand extends Hand {
 	public BlackjackHand() {
 		super();
 	}
@@ -20,6 +20,7 @@ public class BlackjackHand extends Hand{
 	}
 	
 	public boolean typeBlackjack() {
+		//pass by value primitive 
 		return getHandValue() == 21;
 	}
 	

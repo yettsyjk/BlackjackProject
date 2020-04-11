@@ -36,7 +36,7 @@ public class Deck {
   public int checkDeckSize() {
     return cards.size();
   }
-  
+  //someone has to tell the deck to shuffle, go to dealer
   public void shuffle() {
     Collections.shuffle(cards);
   }

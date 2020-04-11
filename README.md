@@ -29,11 +29,11 @@
   - Determine the winner of each round by implementing the remaining rules of Blackjack (such as going over 21) and comparing hand values.
 
 ## Lessons Learned:
-1. Object-oriented programming
-1. Utilizing classes fields that are Objects
-1. dd
-1. dd
-1. dd
+1. Object-oriented programming: Since every class in Java is an object, knowing how to work with objects in specific class and the available methods.
+1. Methods in classes and knowing how to access the specific method when needed.
+1. Working with values in enum class for Rank and for Suit objects
+1. I used conditional statements for game logic and testing each conditional properly during runtime.
+1. Object-oriented concepts are starting to make sense while working remotely. This concept is especially tough for me to visualize but, due to COVID19 and having to use zoom meetings for our course training I could review the videos on some of the pieces that initially didn't make sense. This is still a struggle and hope to solidify my understanding with further doc review.
 
 ### Technologies Used:
 1. Git
@@ -41,10 +41,14 @@
 1. Java
 1. Eclipse IDE
 1. Terminal CLI
-1. UML Diagram
-1. Sequence Diagram
+1. UML Diagram - ObjectAid plugin in Eclipse IDE
+1. Sequence Diagram - Visual Paradigm Online Diagram
+1. Zoom Video Conference
 
 ## MVP
+  - Design OO Class structure, program must not be contained in main.
+  - When the game begins both the player and dealer are dealt two cards.
+  - If a player or dealer is dealt 21 the game is over. Otherwise the player can choose to hit as many times as they wish until they choose to stay.
 
 ## Copyright (c)2020 Yettsy Knapp
  - Let's Connect on [LinkedIn](https://www.linkedin.com/in/yettsy-jo-knapp)

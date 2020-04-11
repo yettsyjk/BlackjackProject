@@ -10,7 +10,7 @@ public class BlackjackHand extends Hand {
 	@Override
 	public int getHandValue() {
 		int playerValue = 0;
-		
+		//abstract method from Hand BlackjackHand defines the method
 		//iterating forward over the array in single elements dataType is Card
 		// variable card followed by array collection getCards()
 		for (Card card : getCards()) {

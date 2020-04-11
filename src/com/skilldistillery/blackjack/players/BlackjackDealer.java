@@ -19,6 +19,7 @@ public class BlackjackDealer extends BlackjackPlayer{
 	}
 	
 	public void dealOneCardToPlayer(BlackjackPlayer player) {
+		//deal two cards to player
 		System.out.println(  deck.dealingCards(2, player.getHand().getCards())  );
 	}
 	

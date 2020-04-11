@@ -64,7 +64,28 @@ public class Card {
 
 	@Override
 	public String toString() {
-		return "Card [Rank = " + rank + ", Suit = " + suit + ", Value = " + rank.getValue() + " ] ";
+		StringBuilder builder = new StringBuilder();
+		//return "Card [Rank = " + rank + ", Suit = " + suit + ", Value = " + rank.getValue() + " ] ";
+		builder.append(" ");
+		builder.append(rank.getValue());
+		
+		builder.append(" of ");
+		if(suit == Suit.CLUBS) {
+			builder.append("♧");
+		}
+		else if(suit == Suit.DIAMONDS) {
+			builder.append("♢");
+		}
+		else if(suit == Suit.SPADES) {
+			builder.append("♤");
+		}
+		else if(suit == Suit.HEARTS) {
+			builder.append("♡");
+		}
+		return builder.toString();
+		
+	
+	
 	}
 	
 	

@@ -9,6 +9,7 @@ public class Deck {
 
   public Deck() {
     cards = createDeck();
+    shuffle();
   }
   
   
@@ -39,6 +40,11 @@ public class Deck {
   //someone has to tell the deck to shuffle, go to dealer
   public void shuffle() {
     Collections.shuffle(cards);
+  }
+  
+  @Override
+  public String toString() {
+	  return "Deck of Cards: [" + cards+ " ]";
   }
   
   public Card dealCard() {

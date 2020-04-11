@@ -12,6 +12,7 @@ public abstract class Hand {
 	
 	//constructor
 	public Hand() {
+		super();
 		cards = new ArrayList<>();
 	}
 	
@@ -22,7 +23,7 @@ public abstract class Hand {
 		return cards;
 	}
 
-	//set
+	
 	public void setCards(List<Card> cards) {
 		this.cards = cards;
 	}
@@ -42,7 +43,7 @@ public abstract class Hand {
 
 	@Override
 	public String toString() {
-		return "Hand [ cards = " + cards + " ] ";
+		return "Hand [ cards = 🂠 " + cards + " ] ";
 	}
 	
 	

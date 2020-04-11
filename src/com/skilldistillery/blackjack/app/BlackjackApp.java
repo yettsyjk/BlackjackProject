@@ -35,6 +35,8 @@ public class BlackjackApp {
 			System.out.println("|       Welcome to Arium Resort & Casino       |");
 			System.out.println("|          Blackjack VIP Table                 |");
 			System.out.println("-----------------------------------------------");
+			
+			
 			dealer.dealOneCardToDealer();
 			System.out.println("        Dealer Dealing to House                ");
 			System.out.println("-----------------------------------------------");
@@ -65,6 +67,8 @@ public class BlackjackApp {
 			System.out.println("Play Again Press Y\n N to Quit");
 			String choiceToKeepPlaying = sc.next();
 			if (choiceToKeepPlaying.equalsIgnoreCase("N")) {
+				System.out.println("Quitting is always OK");
+				System.out.println("Colorado Gambling Resource 1-800-522-4700");
 				System.out.println("VIP Table Thanks You for Spending Your Money With Arium Resort & Casino");
 				keepGoing = false;
 			}
@@ -80,6 +84,7 @@ public class BlackjackApp {
 			System.out.println("|Player Hand Value:" + player.getHandTotal() + "\t\t\t\t|");
 			System.out.println("| 1) Hit (Press 1)                             |");
 			System.out.println("| 2) Stand (Press 2)                           |");
+			System.out.println("| 3) Quit (Press 3)                            |");
 			System.out.println("------------------------------------------------");
 			userChoice = sc.nextInt();
 			switch (userChoice) {
@@ -87,10 +92,16 @@ public class BlackjackApp {
 				dealer.hit(player);
 				break;
 			case 2:
+				//dealer.hit(dealer);
 				break;
+			case 3:
+				System.out.println("Quitting is always OK");
+				System.out.println("24-HOUR CONFIDENTIAL HELPLINE 1-800-522-4700");
+				System.out.println("VIP Table at Arium Resort & Casino Thanks You For Quitting");
+				System.exit(0);
 			default:
 				System.out.println("--------------------------------------");
-				System.out.println("1) Hit (Press 1) \n 2) Stand (Press 2)");
+				System.out.println("| 1) Hit (Press 1)  2) Stand (Press 2)|");
 				System.out.println("--------------------------------------");
 				break;
 			}
@@ -122,18 +133,20 @@ public class BlackjackApp {
 			System.out.println("Player Wins.. BLACKJACK!!");
 		}
 		if (dealer.typeBust()) {
-			System.out.println("Player Wins.. BLACKJACK!!");
+			System.out.println("Player Wins - House Wins");
 		}
 		if (dealer.getHand().getHandValue() > player.getHand().getHandValue()
 				&& dealer.getHand().getHandValue() <= 21) {
 			System.out.println("**************************");
-			System.out.println("*     House Wins         *");
+			System.out.println("*     House * Wins       *");
 			System.out.println("**************************");
+			
 		}
 		if (player.getHand().getHandValue() > dealer.getHand().getHandValue() && !player.typeBust()) {
 			System.out.println("**************************");
 			System.out.println("*      Player Wins       *");
 			System.out.println("**************************");
+			
 		}
 		if (dealer.getHand().getHandValue() == player.getHand().getHandValue() && !dealer.typeBust()
 				&& !player.typeBust()) {
@@ -156,7 +169,7 @@ public class BlackjackApp {
 		// if dealer hand value is larger than 17 based off user story the dealer has
 		if (dealer.getHand().typeBust()) {
 			System.out.println("***************************");
-			System.out.println("*     House ... BUST!     *");
+			System.out.println("*    PLAYER ... WINS!     *");
 			System.out.println("***************************");
 		}
 		// game over
@@ -168,6 +181,7 @@ public class BlackjackApp {
 
 		// allow player to clear deck
 		player.getHand().clear();
+		launchBlackjack();
 	}
 
 }

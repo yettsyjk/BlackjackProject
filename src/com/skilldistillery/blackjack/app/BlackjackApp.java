@@ -24,12 +24,14 @@ public class BlackjackApp {
 	private void launchBlackjack() {
 		boolean keepGoing = true;
 		do {
-			System.out.println("  Welcome to Aria Resort & Casino \nVIP Table  ");
+			System.out.println("-----------------------------------------------");
+			System.out.println("|       Welcome to Arium Resort & Casino       |");
+			System.out.println("|          Blackjack VIP Table                 |");
 			System.out.println("-----------------------------------------------");
 			dealer.dealOneCardToDealer();
-			System.out.println("   Dealer Dealing to House                     ");
-
-			System.out.println("   Dealer Dealing to Player                    ");
+			System.out.println("        Dealer Dealing to House                ");
+			System.out.println("-----------------------------------------------");
+			System.out.println("        Dealer Dealing to Player               ");
 			dealer.dealOneCardToPlayer(player);
 			System.out.println("-----------------------------------------------");
 
@@ -38,17 +40,22 @@ public class BlackjackApp {
 			
 			//logic for who is winning
 			if(player.getHand().getHandValue() == 21 ) {
+				System.out.println("***************************");
 				System.out.println("Player Wins... BLACKJACK!!!");
+				System.out.println("***************************");
+	
 			}
 			if(dealer.typeBlackjack() ) {
-				System.out.println("House Wins... BLACKJACK!!!");
+				System.out.println("***************************");
+				System.out.println("House Wins... BLACKJACK!!!!");
+				System.out.println("***************************");
 			}
 			gameLogic();
 			resetDeck();
 			System.out.println();
 			
 			
-			System.out.println("If you have an addiction and want to keep playing Press Y\n N to Quit");
+			System.out.println("Play Again Press Y\n N to Quit");
 			String choiceToKeepPlaying = sc.next();
 			if (choiceToKeepPlaying.equalsIgnoreCase("N")) {
 				System.out.println("VIP Table Thanks You for Spending Your Money With Aria Resort & Casino");
@@ -62,8 +69,11 @@ public class BlackjackApp {
 		int userChoice = 0;
 
 		do {
-			System.out.println("Player Hand Value: " + player.getHandTotal());
-			System.out.println("1) Hit (Press 1) \n 2) Stand (Press 2)");
+			System.out.println("------------------------------------------------");
+			System.out.println("|Player Hand Value:" + player.getHandTotal()+"\t\t\t\t|");
+			System.out.println("| 1) Hit (Press 1)                             |");
+			System.out.println("| 2) Stand (Press 2)                           |");
+			System.out.println("------------------------------------------------");
 			userChoice = sc.nextInt();
 			switch (userChoice) {
 			case 1:
@@ -72,24 +82,36 @@ public class BlackjackApp {
 			case 2:
 				break;
 			default:
+				System.out.println("--------------------------------------");
 				System.out.println("1) Hit (Press 1) \n 2) Stand (Press 2)");
+				System.out.println("--------------------------------------");
 				break;
 			}
-
+			
 		} while (player.getHandTotal() < 21 && userChoice != 2);
 		System.out.println("Player Hand Value: " + player.getHandTotal());
 		System.out.println();
 		
 		
 		if(player.typeBust()) {
-			System.out.println("Jackpot payout ... BUST!");
+			System.out.println("================================");
+			System.out.println("|      PLAYER ... BUST!        |");
+			System.out.println("================================");
 		}
 	}
 	
 	
 	public void gameLogic() {
+		if(player.getHand().getHandValue() == 21) {
+			System.out.println("******************************");
+			System.out.println("*		PLAYER BLACKJACK	 *");
+			System.out.println("******************************");
+		}
+		//////////
 		if(player.typeBust() ) {
-			System.out.println("House Wins");
+			System.out.println("************************");
+			System.out.println("*     House Wins       *");
+			System.out.println("************************");
 		}
 		if(player.typeBlackjack() ) {
 			System.out.println("Player Wins.. BLACKJACK!!");
@@ -98,13 +120,19 @@ public class BlackjackApp {
 			System.out.println("Player Wins.. BLACKJACK!!");
 		}
 		if(dealer.getHand().getHandValue() > player.getHand().getHandValue() && dealer.getHand().getHandValue() <= 21) {
-			System.out.println("House Wins");
+			System.out.println("*****************************");
+			System.out.println("*       House Wins 	        *");
+			System.out.println("*****************************");
 		}
 		if(player.getHand().getHandValue() > dealer.getHand().getHandValue() && !player.typeBust()) {
-			System.out.println("Player Wins");
+			System.out.println("**************************");
+			System.out.println("*      Player Wins       *");
+			System.out.println("**************************");
 		}
 		if(dealer.getHand().getHandValue() == player.getHand().getHandValue() && !dealer.typeBust() && !player.typeBust()) {
-			System.out.println("No Winner");
+			System.out.println("==========================");
+			System.out.println("|      		DRAW         |");
+			System.out.println("==========================");
 		}
 		
 	}
@@ -120,7 +148,9 @@ public class BlackjackApp {
 		System.out.println(" ");
 		// if dealer hand value is larger than 17 based off user story the dealer has
 		if(dealer.getHand().typeBust() ) {
-			System.out.println("House ... BUST!");
+			System.out.println("***************************");
+			System.out.println("*     House ... BUST!     *");
+			System.out.println("***************************");
 		}
 		// game over
 	}

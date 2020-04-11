@@ -113,9 +113,9 @@ public class BlackjackApp {
 			System.out.println("*     House Wins       *");
 			System.out.println("************************");
 		}
-//		if(player.typeBlackjack() ) {
-//			System.out.println("Player Wins.. BLACKJACK!!");
-//		}
+		if(player.typeBlackjack() ) {
+			System.out.println("Player Wins.. BLACKJACK!!");
+		}
 		if(dealer.typeBust()) {
 			System.out.println("Player Wins.. BLACKJACK!!");
 		}

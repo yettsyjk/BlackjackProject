@@ -41,18 +41,6 @@ public class GamePlay {
 			showDealerHand();
 
 			// logic for who is winning
-			if (player.getHand().getHandValue() == 21) {
-				System.out.println("******************************");
-				System.out.println("* Player Wins... BLACKJACK!!!*");
-				System.out.println("******************************");
-
-			}
-			if (dealer.typeBlackjack()) {
-				System.out.println("******************************");
-				System.out.println("* House Wins... BLACKJACK!!!!*");
-				System.out.println("******************************");
-			}
-
 			gameLogic();
 			resetDeck();
 			System.out.println();

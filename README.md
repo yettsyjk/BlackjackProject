@@ -22,15 +22,14 @@
 
 ## User Story #4
   - The Dealer's decisions are based on game logic in the program.
-
   - The Dealer must decide to Hit or Stay based on the rules of Blackjack: if the Dealer's hand total is below 17, the Dealer must Hit; if the hand total is 17 or above, the Dealer must Stay.
 
 ## User Story #5
   - Determine the winner of each round by implementing the remaining rules of Blackjack (such as going over 21) and comparing hand values.
 
 ## Lessons Learned:
-1. Object-oriented programming: Since every class in Java is an object, knowing how to work with objects in specific class and the available methods.
-1. Methods in classes and knowing how to access the specific method when needed.
+1. Object-oriented programming: Wrapping my head around every class in Java is an object and knowing how to work with objects in specific class and the available methods.
+1. Methods in classes and knowing how to access the specific method when needed. Also when to remove methods that no longer serve their purpose due to new methods.
 1. Working with values in enum class for Rank and for Suit objects
 1. I used many conditional statements for game logic and testing each conditional properly during runtime. I feel that this code wasn't very DRY and efficient but, that's why I'm in this course to help me become more efficient and clean up my code structure.
 1. Object-oriented concepts are starting to make sense while working remotely. These concepts are especially tough for me to visualize. However, due to COVID19 and having to use zoom meetings for our course training I could review the videos on some of the pieces that initially didn't make sense. This is still a struggle and hope to solidify my understanding with further doc review.

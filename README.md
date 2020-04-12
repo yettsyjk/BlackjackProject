@@ -2,7 +2,7 @@
 
 - Created by Software Developer Yettsy Jo Knapp. Denver, CO.
 ## Application Overview
-  - Use classes to create a functional command line blackjack game.
+  - Use classes to create a functional command line blackjack game, using Java.
   - Implement methods and fields to store data you think you would need during a blackjack game.
 
 ## UML Diagram
@@ -32,8 +32,8 @@
 1. Object-oriented programming: Since every class in Java is an object, knowing how to work with objects in specific class and the available methods.
 1. Methods in classes and knowing how to access the specific method when needed.
 1. Working with values in enum class for Rank and for Suit objects
-1. I used conditional statements for game logic and testing each conditional properly during runtime.
-1. Object-oriented concepts are starting to make sense while working remotely. This concept is especially tough for me to visualize but, due to COVID19 and having to use zoom meetings for our course training I could review the videos on some of the pieces that initially didn't make sense. This is still a struggle and hope to solidify my understanding with further doc review.
+1. I used many conditional statements for game logic and testing each conditional properly during runtime. I feel that this code wasn't very DRY and efficient but, that's why I'm in this course to help me become more efficient and clean up my code structure.
+1. Object-oriented concepts are starting to make sense while working remotely. These concepts are especially tough for me to visualize. However, due to COVID19 and having to use zoom meetings for our course training I could review the videos on some of the pieces that initially didn't make sense. This is still a struggle and hope to solidify my understanding with further doc review.
 
 ### Technologies Used:
 1. Git
@@ -42,7 +42,6 @@
 1. Eclipse IDE
 1. Terminal CLI
 1. UML Diagram - ObjectAid plugin in Eclipse IDE
-1. Sequence Diagram - Visual Paradigm Online Diagram
 1. Zoom Video Conference
 
 ## MVP

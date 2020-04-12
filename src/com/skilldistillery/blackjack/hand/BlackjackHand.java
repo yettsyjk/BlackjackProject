@@ -13,8 +13,10 @@ public class BlackjackHand extends Hand {
 		//abstract method from Hand BlackjackHand defines the method
 		//iterating forward over the array in single elements dataType is Card
 		// variable card followed by array collection getCards()
+		//method will evaluate first card and add the value of the second card, repeating method for each card
 		for (Card card : getCards()) {
 			playerValue += card.getValue();
+			//System.out.println("Printing in BlackjackHand.java line 18"+ playerValue);
 		}
 		return playerValue;
 	}
